@@ -1,0 +1,92 @@
+<html><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+    <meta charset="utf-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JS -->
+    <!-- load angular, nganimate, and ui-router -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    <script src="app.js"></script>
+    
+</head>
+<body ng-app="formApp" class="ng-scope">
+
+<!-- views will be injected here -->
+<div class="container">
+    <!-- uiView:  --><div ui-view="" class="ng-scope"><div class="row ng-scope">
+<div class="col-sm-8 col-sm-offset-2">
+
+  <div id="form-container">
+  
+      <div class="page-header text-center">
+          <h2>Let's Be Friends</h2>
+          
+          <!-- the links to our nested states using relative paths -->
+          <!-- add the active class if the state matches our ui-sref -->
+          <div id="status-buttons" class="text-center">
+              <a ui-sref-active="active" ui-sref=".profile" class="" href="#/form/profile"><span>1</span> Profile</a>
+              <a ui-sref-active="active" ui-sref=".interests" class="" href="#/form/interests"><span>2</span> Interests</a>
+              <a ui-sref-active="active" ui-sref=".payment" class="active" href="#/form/payment"><span>3</span> Payment</a>
+          </div>
+      </div>
+      
+      <!-- use ng-submit to catch the form submission and use our Angular function -->
+      <form id="signup-form" ng-submit="processForm()" class="ng-valid ng-dirty">
+          <!-- our nested state views will be injected here -->
+          <!-- uiView:  --><div id="form-views" ui-view="" class="ng-scope ng-animate ng-enter ng-enter-active" style=""><div class="text-center ng-scope">
+    <span class="glyphicon glyphicon-heart"></span>
+    <h3>Thanks For Your Money!</h3>
+    
+    <button type="submit" class="btn btn-danger">Submit</button>
+</div></div><div id="form-views" ui-view="" class="ng-scope ng-animate ng-leave ng-leave-active" style=""><label class="ng-scope">What's Your Console of Choice?</label>
+<div class="form-group ng-scope">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.type" value="xbox" checked="" class="ng-pristine ng-valid" name="009">
+           I like XBOX
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.type" value="ps" class="ng-pristine ng-valid" name="00A">
+            I like PS4
+        </label>
+    </div>
+</div>
+
+<div class="form-group row ng-scope">
+<div class="col-xs-6 col-xs-offset-3">
+    <a ui-sref="form.payment" class="btn btn-block btn-info" href="#/form/payment">
+    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div></div>
+      </form>
+  
+  </div>
+  
+  <!-- show our formData as it is being typed -->
+  <pre class="ng-binding">    {"name":"luna","email":"lunagp03@gmail.com"}
+  </pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+    <div class="jumbotron text-muted text-center">
+        <p>AngularJS Practice Form By <a href="http://www.GlobalSQA.com" target="_blank">GlobalSQA</a></p>
+        
+    </div>
+    </div>
+</div>
+
+
+</body></html>
